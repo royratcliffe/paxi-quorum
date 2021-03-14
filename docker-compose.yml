@@ -1,0 +1,7 @@
+version: "3.7"
+
+services:
+
+  paxi-node:
+    build: paxi-node
+    scale: 3
