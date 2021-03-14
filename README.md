@@ -12,6 +12,19 @@ source files; the launcher sorts then loads all unloaded server sources.
 Hence it also loads as-yet-to-be-deployed sources in any derived
 container images.
 
+## Loader Sorting
+
+Sorting the sources lets ordering dependencies exist by prefixing with
+digits, e.g. `000_load_me_first.pl` loads before `load_me_second.pl`; this
+simple approach sets up a convention for general load ordering. 
+
+The strategy presumes that all sources in `/srv` need to be loaded. Put
+them elsewhere if they are optional, e.g. in a package. 
+
+The sorting does not override explicit dependency load-ordering since
+only unloaded sources load this way. The loader resolves the dependency
+tree.
+
 ## References
 
 * [Paxi](https://en.wikipedia.org/wiki/Paxi)
