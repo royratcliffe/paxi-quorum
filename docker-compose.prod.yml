@@ -1,0 +1,6 @@
+version: "3"
+
+services:
+
+  paxi-node:
+    image: paxi-quorum_paxi-node
