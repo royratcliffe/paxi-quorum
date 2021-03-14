@@ -1,9 +1,4 @@
-:- module(load, []).
-:- autoload(library(prolog_source), [directory_source_files/3]).
-
-:- initialization(up, program).
-
-up :-
-    directory_source_files(., Files0, [recursive(true), if(not_loaded)]),
+:-
+    expand_file_name('[0-9]*.pl', Files0),
     sort(Files0, Files),
-    load_files(Files).
+    load_files(Files, [if(not_loaded)]).
