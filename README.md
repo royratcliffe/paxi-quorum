@@ -4,7 +4,7 @@ Named for Paxi, the Greek island group on the Ionian sea. Uses
 SWI-Prolog Paxos to implement a Dockerised consensus quorum.
 
 Each Paxi node launches a non-forking HTTP daemon on port 8080 as user
-daemon.
+`daemon`.
 
 Forking fails for Docker container deployment. It terminates the
 container because the container itself represents an architectural
