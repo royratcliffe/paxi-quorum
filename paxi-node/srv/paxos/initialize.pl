@@ -1,7 +1,11 @@
+:- module(paxos_initialize, []).
 :- use_module(library(paxos), [paxos_initialize/1]).
 :- ensure_loaded(udp).
+:- ensure_loaded(hooks).
 
-paxos:paxos_message_hook(Paxos, -, udp(paxos, Paxos)) :- !.
-paxos:paxos_message_hook(Paxos, Timeout, udp(paxos, Paxos, Timeout)).
+:- initialization(up, program).
 
-:- paxos_initialize([]).
+up :-
+    gethostname(Host),
+    tcp_host_to_address(Host, ip(_, _, _, Node)),
+    paxos_initialize([node(Node)]).
