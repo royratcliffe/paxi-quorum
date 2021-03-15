@@ -5,3 +5,10 @@ services:
   paxi-node:
     build: paxi-node
     scale: 3
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8000:8000
