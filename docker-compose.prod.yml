@@ -4,3 +4,5 @@ services:
 
   paxi-node:
     image: paxi-quorum_paxi-node
+    ports:
+      - 8080:8080
