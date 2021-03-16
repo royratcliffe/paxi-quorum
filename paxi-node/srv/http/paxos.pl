@@ -19,9 +19,7 @@ paxos_key(get, Key, _Request) :-
     reply_json(Value).
 paxos_key(post, Key, Request) :-
     http_read_data(Request, Data, []),
-    paxos_set(Key, Data),
-    paxos_get(Key, Value),
-    reply_json(Value).
+    paxos_set(Key, Data).
 
 paxos_properties(_Request) :-
     findall(B=C, (paxos_property(A), A =.. [B, C]), D),
