@@ -1,0 +1,15 @@
+﻿/*  Saved settings
+*/
+
+
+%	Max Retries to get a value from the forum
+setting(paxos:max_gets, 10).
+
+%	Max time to wait for a response
+setting(paxos:response_timeout, 0.2).
+
+%	File in which to log HTTP requests
+setting(http:logfile, '/var/log/httpd.log').
+
+%	Log POST data up to N bytes long
+setting(http:log_post_data, 1000000).
