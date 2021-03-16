@@ -5,4 +5,5 @@ services:
   paxi-node:
     image: paxi-quorum_paxi-node
     ports:
+      - 20005:20005/udp
       - 8080:8080
