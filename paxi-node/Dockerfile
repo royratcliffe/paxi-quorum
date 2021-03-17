@@ -18,4 +18,4 @@ RUN apt-get install -y swi-prolog-nox
 WORKDIR /srv
 COPY srv .
 RUN find . -name '*~' -exec rm {} +
-ENTRYPOINT [ "/bin/sh", "/srv/load.sh" ]
+ENTRYPOINT [ "/bin/sh", "-c", "exec swipl [0-9]*.pl -- --no-fork --user=daemon --http=8080" ]
