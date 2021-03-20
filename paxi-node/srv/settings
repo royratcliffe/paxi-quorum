@@ -9,7 +9,7 @@ setting(paxos:max_gets, 10).
 setting(paxos:response_timeout, 0.2).
 
 %	File in which to log HTTP requests
-setting(http:logfile, '/var/log/httpd.log').
+setting(http:logfile, '/var/log/daemon/http.log').
 
 %	Log POST data up to N bytes long
 setting(http:log_post_data, 1000000).
