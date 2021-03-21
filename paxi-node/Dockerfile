@@ -15,9 +15,9 @@ RUN apt-add-repository ppa:swi-prolog/devel
 RUN apt-get update
 RUN apt-get install -y swi-prolog-nox
 
-RUN mkdir /var/log/daemon
-RUN chown daemon.daemon /var/log/daemon
 WORKDIR /srv
 COPY srv .
 RUN find . -name '*~' -exec rm {} +
+RUN mkdir /var/log/daemon
+RUN chown daemon.daemon /var/log/daemon
 ENTRYPOINT [ "/bin/sh", "-c", "exec swipl [0-9]*.pl -- --no-fork --user=daemon --http=8080" ]
