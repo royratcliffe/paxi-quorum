@@ -1,10 +1,13 @@
 STACK = paxi-quorum
 SCALE = 5
 
-.PHONY: build up deploy ps rm services scale
+.PHONY: build rebuild up deploy ps rm services scale
 
 build:
 	docker-compose build
+
+rebuild:
+	docker-compose build --no-cache
 
 up:
 	docker-compose up --build
