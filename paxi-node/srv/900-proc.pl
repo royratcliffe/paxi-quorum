@@ -1,1 +1,1 @@
-:- ensure_loaded(proc/handlers).
+:- load_files([library(proc/handlers)]).
